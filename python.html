@@ -20,11 +20,30 @@
         border: 1px solid grey;
         overflow-x: auto;
     }
+    *,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+@media (min-width: 650px) {
+    aside {
+        display: flex;
+    }
+    .padTop {
+        margin-left: 2em;
+    }
+
+    .normal {
+        margin-top: 0;
+    }
+}
+
+
 </style>
 <body>
     <h1 class="men">Python Fundamentals: </h1>
     <p class="new">Fundamentals of Python consists of a discussion of basic building blocks of the Python programming language. Here, “Fundamentals of Python” is divided into the following categories. And we will be discussing each topic separately.</p>
-    <img src="img/fundpy.png" alt="py">
+    <img src="img/fundpy.png" alt="py" width="455" height="307>
     <p class="normal"><span lang="EN">First and foremost, we will be discussing statements in Python. </span></p>
     <div id="_statement" class="padTop">
         <h2><strong>Statements</strong></h2>
@@ -35,7 +54,7 @@
         <li><strong>Expression Statements </strong></li>
         <li><strong>Assignment Statements</strong></li>
         </ul>
-        <p><img src="img/statements.png" alt="statement" width="485" height="307"></p>
+        <p><img src="img/statements.png" alt="statement" width="455" height="307"></p>
         <div id="_expressions" class="padTop">
             <h3><strong>Expression Statement:</strong></h3>
             </div>
@@ -165,7 +184,7 @@ Let’s understand that with the help of an example:</p>
     </div>
     <p>Python has the documentation strings (or docstrings) feature. It gives programmers an easy way of adding quick notes with every Python module, function, class, and method.<br />
     The strings defined using the triple-quotation mark are multiline comments. However, if such a string is placed immediately after a function or class definition or on top of a module, then they turn into docstrings.<br />
-    <strong>Example:</strong></p>
+    <!-- <strong>Example:</strong></p>
     <pre><strong>def SayFunction():</strong>
     <strong>    '''</strong>
     <strong>    Strings written using '''_''' after a function represents docstring of func</strong>
@@ -173,7 +192,7 @@ Let’s understand that with the help of an example:</p>
     <strong>    '''</strong>
     <strong>    print("just a docstring")</strong>
     <strong>print("Let us see how to print the docstring value")</strong>
-    <strong>print(theFunction.__doc__)</strong></pre>
+    <strong>print(theFunction.__doc__)</strong></pre> -->
     <div id="_Variables" class="padTop">
         <h2><strong>Variables:</strong></h2>
         </div>
@@ -205,7 +224,7 @@ Let’s understand that with the help of an example:</p>
                 <ul>
                 <li>Constants are usually declared and assigned on a different module/file.</li>
                 </ul>
-                <pre><strong>#Declare constants in a separate file called constant.py</strong>
+                <pre><strong>#Declare constants in a separate file called <br> constant.py</strong>
                 <strong>PI = 3.14</strong>
                 <strong>GRAVITY = 9.8</strong></pre>
                 <ul>
@@ -225,7 +244,7 @@ Let’s understand that with the help of an example:</p>
                 <li><strong>Literals</strong></li>
                 <li><strong>Operators</strong></li>
                 </ul>
-                <p><img src="img/token.png" alt="token" width="548" height="345"></p>    
+                <p><img src="img/token.png" alt="token" width="415" height="345"></p>    
                 <div id="_Keywords" class="padTop">
                     <h3><strong>Keywords:</strong></h3>
                     </div>
@@ -233,15 +252,41 @@ Let’s understand that with the help of an example:</p>
                     Keywords in python are case sensitive.<br />
                     We’ve just captured here a snapshot of the possible Python keywords.</p>
                     <pre><strong>help&gt; keywords
-                    Here is a list of the Python keywords.  Enter any keyword to get more help.
-                    </strong><strong>False              def               if                   raise
-                    None              del               import           return
-                    True               elif                in                  try
-                    and                else              is                  while
-                    as                  except          lambda         with
-                    assert            finally            nonlocal       yield
-                    break             for                 not
-                    class              from              or                 </strong><strong>continue         global           pass</strong></pre>
+                    Here is a list of the Python keywords. <br> Enter any keyword to get more help.
+                    </strong><strong>
+                    <ul>
+                        <li>False</li>
+                        <li>def</li>
+                        <li>if</li>
+                        <li>raise</li>
+                        <li>None</li>
+                        <li>del</li>
+                        <li>import</li>
+                        <li>return</li>
+                        <li>True</li>
+                        <li>elif</li>
+                        <li>in</li>
+                        <li>try</li>
+                        <li>and</li>
+                        <li>else</li>
+                        <li>is</li>
+                        <li>while</li>
+                        <li>as</li>
+                        <li>except</li>
+                        <li>lambda</li>
+                        <li>with</li>
+                        <li>assert</li>
+                        <li>finally</li>
+                        <li>nonlocal</li>
+                        <li>yield</li>
+                        <li>break</li>
+                        <li>for</li>
+                        <li>not</li>
+                        <li>class</li>
+                        <li>from</li>
+                        <li>or</li>
+                    </ul>                           </strong>
+                    </pre>
                     <div id="_Identifiers" class="padTop">
                         <h3><strong>Identifiers</strong></h3>
                         </div>
@@ -259,7 +304,7 @@ Let’s understand that with the help of an example:</p>
                             <h3><strong>Literals:</strong></h3>
                             </div>
                             <p>The other built-in objects in python are Literals. Literals can be defined as data that is given in a variable or constant. Python has the following literals:<br>  
-    <img src="img/literals.png" alt="literals"  width="522" height="330">
+    <img src="img/literals.png" alt="literals"  width="422" height="330">
     <h4><strong>String Literals: </strong></h4>
 <p>A string literal is a sequence of characters surrounded by quotes. We can use both single, double, or triple quotes for a string in Python. And, a character literal is a single character surrounded by single or double-quotes.</p>
 <h4><strong>Numeric Literals: </strong></h4>
