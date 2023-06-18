@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 6px;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+    tr,td,th{
+        border: 1px solid grey;
+        overflow-x: auto;
+    }
+</style>
+<body>
+    <h1 class="men">Python Fundamentals: </h1>
+    <p class="new">Fundamentals of Python consists of a discussion of basic building blocks of the Python programming language. Here, “Fundamentals of Python” is divided into the following categories. And we will be discussing each topic separately.</p>
+    <img src="img/fundpy.png" alt="py">
+    <p class="normal"><span lang="EN">First and foremost, we will be discussing statements in Python. </span></p>
+    <div id="_statement" class="padTop">
+        <h2><strong>Statements</strong></h2>
+    </div>
+        <p>Python statements are nothing but logical instructions that interpreters can read and execute. It can be both single and multiline.<br />
+        There are two categories of statements in Python:</p>
+        <ul>
+        <li><strong>Expression Statements </strong></li>
+        <li><strong>Assignment Statements</strong></li>
+        </ul>
+        <p><img src="img/statements.png" alt="statement" width="485" height="307"></p>
+        <div id="_expressions" class="padTop">
+            <h3><strong>Expression Statement:</strong></h3>
+            </div>
+            <p>With the help of expressions, we perform operations like addition, subtraction, concentration etc.<br />
+            In other words, it is a statement that returns a value.<br />
+            it is an expression if it appears-</p>
+            <ul>
+            <li>On the right side of an assignment,</li>
+            <li>As a parameter to a method call.</li>
+            </ul>
+            <p><strong>Note: An expression must have a return.</strong><br /> 
+                <strong>Example:</strong></p>
+                <ul>
+                <li>Using simple arithmetic expression:</li>
+                </ul>
+                <pre><strong>(1+5) * 3</strong>
+                <strong>18</strong></pre>
+                <ul>
+                <li>Using a function in an expression:</li>
+                </ul>
+                <pre><strong>pow (3,2)</strong>
+                <strong>9</strong></pre>
+                <div id="_assignment_statements" class="padTop">
+                    <h3><strong>Assignment Statements</strong></h3>
+                    </div>
+                <p>With the help of <strong>assignment statements</strong>, we create new variables, assign values and also change values.</p>
+                <h3><strong><span lang="EN">Structure of an assignment statement syntax:</span></strong></h3>
+                <pre><strong>#LHS &lt;=&gt; RHS</strong>
+                <strong>variable = expression</strong></pre>
+                <p>We can categorize Assignment statements into three primary categories based on what’s on the Right-Hand Side of the statement.</p>
+                <ul>
+                <li><strong>Value-Based Expression on RHS</strong></li>
+                <li><strong>Current Variable on RHS </strong></li>
+                <li><strong>Operation on RHS</strong></li>
+                </ul>
+                <h2><strong>Value-Based Expression on the RHS:</strong></h2>
+                <p>In this case, Python allocates a new memory location to the newly assigned variable.<br />
+                Let us take an example of this category.</p>
+                <ul>
+                <li>First, let’s create a string and assign it to a variable “test”,</li>
+                <li>Then, we will check the memory location id python has assigned for the variable</li>
+                </ul>
+                <pre><strong>test= "Hello World"</strong>
+                <strong>id(test)</strong></pre>
+                <p><strong>Note:</strong><br />
+                Look at the example shown below:</p>
+                <pre><strong>test1=</strong><strong>"Hello"</strong>
+                <strong>id(test1)</strong>
+                <strong>output:</strong>
+                <strong>2524751071304</strong></pre>
+                <pre><strong>test2=</strong><strong>"Hello"</strong>
+                <strong>id(test2)</strong>
+                <strong>output:</strong>
+                <strong>2524751071304</strong></pre>
+                <p>As you might have noticed that <strong>we have assigned the same string to two different variables. But python allocated the same memory location for both the variables</strong>. That is because:<br />
+                Python allocates the same memory location for the two cases mentioned below:</p>
+                <ul>
+                <li>If the strings with less than 20 characters that don’t have white spaces and</li>
+                <li>Integers ranging between (-5 to +255).</li>
+                </ul>
+                <p>This concept used by Python to save memory is also called <strong>Interning.</strong></p>
+                <h3><strong>Current Python variable on RHS:</strong></h3>
+<p>In this case, Python doesn’t allocate a new memory location.<br />
+Let’s understand that with the help of an example:</p>
+<pre><strong>current_var= "It's HumbleGumble"</strong>
+<strong>print(id(current_var))</strong>
+<strong>new_var= current_var</strong>
+<strong>print(id(new_var))</strong>
+<strong>24751106240</strong>
+<strong>2524751106240</strong></pre>
+<p>As you can see we have the same location id allotted for the two variables.</p>
+<h3><strong>Operation on RHS:</strong></h3>
+<p>In this category, we have an operation on the right side of the statement, which is the defining factor of the type of our statement.<br />
+Let’s understand that with the help of an example:</p>
+<pre><strong>test= 7 * 2</strong>
+<strong>type(test)</strong>
+<strong>int</strong></pre>
+<pre><strong>test1= 7 * 2 / 10</strong>
+<strong>type(test1)</strong>
+<strong>output:</strong>
+<strong>float</strong></pre>
+<h2 class="clearfix single-interview-question" style="text-align: justify"><strong>Multiline statements</strong></h2>
+<p>There are two ways to define multiline statements.</p>
+<ul>
+<li>Implicit Method</li>
+<li>Explicit Method</li>
+</ul>
+<p class="normal"><span lang="EN">The end of a statement in python is considered as a newline character, to extend the statements over multiple lines we can use two methods.</span></p>
+<ul>
+<li class="normal">Implicit: By using parenthesis like (), {} or [].</li>
+</ul>
+<p>e.g.</p>
+<pre><strong>a = (0 + 1 + 2 + </strong>
+<strong>    3 + 4 + 5)</strong></pre>
+<ul>
+<li><strong>Explicit</strong>: By using continuation character “\”.</li>
+</ul>
+<pre><strong>a = 0 + 1 + 2 + \</strong>
+<strong>    3 + 4 + 5</strong></pre>
+<div id="_Comments" class="padTop">
+    <h2><strong>Comments</strong></h2>
+    </div>
+    <p class="normal">Comments are nothing but tagged lines of in codes which increases the readability of the code and make the code self-explanatory.<strong>Comments</strong>can be of two categories:</p>
+    <div id="_single_line_comments" class="padTop">
+    <h3><strong>Single-line comments:</strong></h3>
+    </div>
+    <p>With the help of one ‘<strong>#</strong>’, we begin a single-line comment<br />
+    <strong>Example:</strong></p>
+    <pre>test= 7 * 2
+    type(test)
+    #Single-line comment
+    </pre>
+    <div id="_multi_line_comments" class="padTop">
+    <h3><strong>Multi-line comments:</strong></h3>
+    </div>
+    <p>With the help of ‘‘‘&#8230; ’’,’ we write multiline comments in python.<br />
+    <strong>Example:</strong></p>
+    <pre><strong>test1= 7 * 2 / 10</strong>
+    <strong>type(test1)</strong>
+    <strong>'''</strong>
+    <strong>line one</strong>
+    <strong>line two</strong>
+    <strong>line three</strong>
+    <strong>'''</strong></pre>
+    <div id="_doc_staring_comments" class="padTop">
+    <h3><strong>Docstring comments:</strong></h3>
+    </div>
+    <p>Python has the documentation strings (or docstrings) feature. It gives programmers an easy way of adding quick notes with every Python module, function, class, and method.<br />
+    The strings defined using the triple-quotation mark are multiline comments. However, if such a string is placed immediately after a function or class definition or on top of a module, then they turn into docstrings.<br />
+    <strong>Example:</strong></p>
+    <pre><strong>def SayFunction():</strong>
+    <strong>    '''</strong>
+    <strong>    Strings written using '''_''' after a function represents docstring of func</strong>
+    <strong>    Python docstrings are not comments</strong>
+    <strong>    '''</strong>
+    <strong>    print("just a docstring")</strong>
+    <strong>print("Let us see how to print the docstring value")</strong>
+    <strong>print(theFunction.__doc__)</strong></pre>
+    <div id="_Variables" class="padTop">
+        <h2><strong>Variables:</strong></h2>
+        </div>
+        <p>A variable is a memory address that can change and when a memory address cannot change then it is known as constant. Variable is the name of the memory location where data is stored. Once a variable is stored then space is allocated in memory. It defines a variable using a combination of numbers, letters, and the underscore character.</p>
+        <h3><strong>Assigning Values to Variables</strong></h3>
+        <p>There is no need for an explicit declaration to reserve memory. The assignment is done using the equal (=) operator. Some examples of legal<strong>python variables</strong>> are –</p>
+        <pre><strong>i = 1</strong>
+            <strong>j = 2</strong></pre>
+            <h3><strong><span lang="EN">Multiple Variable Assignment:</span></strong></h3>
+            <p class="normal"><span lang="EN">You can assign a single value to the multiple variables as follows –</span></p>
+            <pre><strong>a=2</strong></pre>
+            <p class="normal"><span lang="EN">Also, we can assign multiple values to the multiple variables as follows –</span></p>
+            <pre><strong>a, b, c = 2, 25, ‘abc’</strong></pre>
+            <p><strong>Note: Python is a type inferred language i.e. it automatically detects the type of assigned variable.</strong><br />
+            For instance,</p>
+            <pre><strong>test=1</strong>
+            <strong>type(test)</strong>
+            <strong>output:</strong>
+            <strong>int</strong></pre>
+            <pre><strong>test1="String"</strong>
+            <strong>type(test1)</strong>
+            <strong>output:</strong>
+            <strong>str</strong></pre>
+            <div id="_Constants" class="padTop">
+                <h2><strong>Constants:</strong></h2>
+                </div>
+                <p>Constant is a type of variable that holds values, whose value cannot be changed. In reality, we rarely use constants in python.</p>
+                <h3><strong>Assigning a value to a constant in Python</strong></h3>
+                <ul>
+                <li>Constants are usually declared and assigned on a different module/file.</li>
+                </ul>
+                <pre><strong>#Declare constants in a separate file called constant.py</strong>
+                <strong>PI = 3.14</strong>
+                <strong>GRAVITY = 9.8</strong></pre>
+                <ul>
+                <li>Then import it to the main file.</li>
+                </ul>
+                <pre><strong>#inside main.py we import the constants</strong>
+                <strong>import constant</strong>
+                <strong>print(constant.PI)</strong>
+                <strong>print(constant.GRAVITY)</strong></pre>
+                <div id="_Tokens" class="padTop">
+                <h2><strong>Token</strong></h2>
+                </div>
+                <p>Tokens are the smallest unit of the program. There are the following tokens in Python:</p>
+                <ul>
+                <li><strong>Reserved words or Keywords</strong></li>
+                <li><strong>Identifiers</strong></li>
+                <li><strong>Literals</strong></li>
+                <li><strong>Operators</strong></li>
+                </ul>
+                <p><img src="img/token.png" alt="token" width="548" height="345"></p>    
+                <div id="_Keywords" class="padTop">
+                    <h3><strong>Keywords:</strong></h3>
+                    </div>
+                    <p>Keywords are nothing but a set of special words, which are reserved by python and have specific meanings. Remember that we are not allowed to use keywords as variables in python.<br />
+                    Keywords in python are case sensitive.<br />
+                    We’ve just captured here a snapshot of the possible Python keywords.</p>
+                    <pre><strong>help&gt; keywords
+                    Here is a list of the Python keywords.  Enter any keyword to get more help.
+                    </strong><strong>False              def               if                   raise
+                    None              del               import           return
+                    True               elif                in                  try
+                    and                else              is                  while
+                    as                  except          lambda         with
+                    assert            finally            nonlocal       yield
+                    break             for                 not
+                    class              from              or                 </strong><strong>continue         global           pass</strong></pre>
+                    <div id="_Identifiers" class="padTop">
+                        <h3><strong>Identifiers</strong></h3>
+                        </div>
+                        <p>Identifiers in python are nothing but user-defined names to represent programmable entities like variables, functions, classes, modules or any other objects.<br />
+                        But there are a few rules that we need to follow while defining an identifier. They are:</p>
+                        <ul>
+                        <li>You can use a sequence of letters (lowercase (a to z) or uppercase (A to Z)). You can also mix up digits (0 to 9) or an underscore (_) while defining an identifier.</li>
+                        <li>You can’t use digits to begin an identifier name.</li>
+                        <li>You should not use Reserved Keywords to define an identifier.</li>
+                        <li>Other than underscore (_) you are not allowed to use any other special characters.</li>
+                        <li>Even though python doc says that you can name an identifier with unlimited length. But it is not entirely true.</li>
+                        </ul>
+                        <p>Using a large name (more than 79 chars) would lead to the violation of a rule set by the PEP-8 standard. It says.</p>
+                        <div id="_Literals" class="padTop">
+                            <h3><strong>Literals:</strong></h3>
+                            </div>
+                            <p>The other built-in objects in python are Literals. Literals can be defined as data that is given in a variable or constant. Python has the following literals:<br>  
+    <img src="img/literals.png" alt="literals"  width="522" height="330">
+    <h4><strong>String Literals: </strong></h4>
+<p>A string literal is a sequence of characters surrounded by quotes. We can use both single, double, or triple quotes for a string in Python. And, a character literal is a single character surrounded by single or double-quotes.</p>
+<h4><strong>Numeric Literals: </strong></h4>
+<p>Numeric Literals are immutable (unchangeable). Numeric literals can belong to 3 different numerical types Integer, Float, and Complex.</p>
+<h4><strong>Boolean Literals:</strong></h4>
+<p>A Boolean literal can have any of the two values: True or False.</p>
+<h4><strong>Collection literals: </strong></h4>
+<p>There are four different literal collections List literals, Tuple literals, Dict literals, and Set literals.<strong> </strong></p>
+<h4><strong>Special literals:</strong></h4>
+<p>Python contains one special literal i.e. None. We use it to specify that field that is not created.</p>
+<div id="_Operators" class="padTop">
+<h3><strong>Operators:</strong></h3>
+</div>
+<p>Operators are the symbols that perform the operation on some values. These values are known as operands.<br />
+In Python, operators are categorized into the following categories:</p>
+<ul>
+<li><strong>Arithmetic Operators</strong></li>
+<li><strong>Relational Operators</strong></li>
+<li><strong>Assignment Operators</strong></li>
+<li><strong>Logical Operators</strong></li>
+<li><strong>Membership Operators</strong></li>
+<li><strong>Identity Operators</strong></li>
+<li><strong>Bitwise Operators</strong></li>
+</ul>            
+<h4><strong>Arithmetic Operators</strong></h4>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><strong>Arithmetic Operators</strong></td>
+<td><b>Operator Name</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>+</b></td>
+<td><span style="font-weight: 400">Addition</span></td>
+<td><span style="font-weight: 400">Perform Addition</span></td>
+<td><span style="font-weight: 400">I=40, J=20 </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I+ J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;</span><span style="font-weight: 400">60</span></td>
+</tr>
+<tr>
+<td><b>–</b></td>
+<td><span style="font-weight: 400">Subtraction</span></td>
+<td><span style="font-weight: 400">Perform Subtraction</span></td>
+<td><span style="font-weight: 400">I=40, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I – J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;</span><span style="font-weight: 400">20</span></td>
+</tr>
+<tr>
+<td><b>*</b></td>
+<td><span style="font-weight: 400">Multiplication</span></td>
+<td><span style="font-weight: 400">Perform Multiplication</span></td>
+<td><span style="font-weight: 400">I=40, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I * J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt; </span><span style="font-weight: 400">800</span></td>
+</tr>
+<tr>
+<td><b>/</b></td>
+<td><span style="font-weight: 400">Division</span></td>
+<td><span style="font-weight: 400">Perform Division</span></td>
+<td><span style="font-weight: 400">I=30, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I /J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt; </span><span style="font-weight: 400">2.5</span></td>
+</tr>
+<tr>
+<td><b>%</b></td>
+<td><span style="font-weight: 400">Modulus</span></td>
+<td><span style="font-weight: 400">Return the remainder after Division</span></td>
+<td><span style="font-weight: 400">I=40, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I /J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt; </span><span style="font-weight: 400">0</span></td>
+</tr>
+<tr>
+<td><b>**</b></td>
+<td><span style="font-weight: 400">Exponent</span></td>
+<td><span style="font-weight: 400">Performs exponential (power) calculation</span></td>
+<td><span style="font-weight: 400">I=4, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I /J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt; </span><span style="font-weight: 400">20</span><span style="font-weight: 400">4</span></td>
+</tr>
+<tr>
+<td><b>//</b></td>
+<td><span style="font-weight: 400">Floor Division</span></td>
+<td><span style="font-weight: 400">Perform division remove the decimal value and return Quotient value</span></td>
+<td><span style="font-weight: 400">I=30, J=20</span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;I//J </span><br />
+<span style="font-weight: 400">&gt;&gt;&gt;</span><span style="font-weight: 400"> 1</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Relational Operators</strong></h4>
+<p>It is also known as the comparison operator because it compares the values. After comparison, it returns the Boolean value i.e. either true or false.</p>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Operator Name</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>==</b></td>
+<td><span style="font-weight: 400">Equal to</span></td>
+<td><span style="font-weight: 400">If the values of two operands are equal, then then it returns true.</span></td>
+<td><span style="font-weight: 400">I = 20, J = 20</span><br />
+<span style="font-weight: 400">(I == J) is </span><span style="font-weight: 400">True</span></td>
+</tr>
+<tr>
+<td><b>!=</b></td>
+<td><span style="font-weight: 400">Not Equal to</span></td>
+<td><span style="font-weight: 400">If the values of two operands are not equal, then it returns true.</span></td>
+<td><span style="font-weight: 400">I = 20, J = 20</span><br />
+<span style="font-weight: 400">(I == J) is </span><span style="font-weight: 400">False</span></td>
+</tr>
+<tr>
+<td><b>&lt; </b></td>
+<td><span style="font-weight: 400">Less than</span></td>
+<td><span style="font-weight: 400">If the value of the left operand is less than the value of the right operand, then it returns true</span></td>
+<td><span style="font-weight: 400">I = 40, J = 20</span><br />
+<span style="font-weight: 400">(I &lt; J) is </span><span style="font-weight: 400">False</span></td>
+</tr>
+<tr>
+<td><b>&gt;</b></td>
+<td><span style="font-weight: 400">Greater than</span></td>
+<td><span style="font-weight: 400">If the value of the left operand is greater than the value of the right operand, then it returns true</span></td>
+<td><span style="font-weight: 400">I= 40, J = 20</span><br />
+<span style="font-weight: 400">(I &gt; J) is </span><span style="font-weight: 400">True</span></td>
+</tr>
+<tr>
+<td><b>&lt;=</b></td>
+<td><span style="font-weight: 400">Less than or equal to</span></td>
+<td><span style="font-weight: 400">If the value of the left operand is less than or equal to the value of the right operand, then it returns true</span></td>
+<td><span style="font-weight: 400">I = 40, J = 20</span><br />
+<span style="font-weight: 400">(I &lt;= J) is </span><span style="font-weight: 400">False</span></td>
+</tr>
+<tr>
+<td><b>&gt;=</b></td>
+<td><span style="font-weight: 400">Greater than or equal to</span></td>
+<td><span style="font-weight: 400">If the value of the left operand is greater than or equal to the value of the right operand, then it returns true.</span></td>
+<td><span style="font-weight: 400">I = 40, J = 20</span><br />
+<span style="font-weight: 400">(I &gt;= J) is </span><span style="font-weight: 400">True</span></td>
+</tr>
+<tr>
+<td><b>&lt;&gt; </b></td>
+<td><span style="font-weight: 400">Not equal to (similar to !=)</span></td>
+<td><span style="font-weight: 400">If the values of two operands are not equal, then the condition becomes true</span></td>
+<td><span style="font-weight: 400">I=40, J = 20</span><br />
+<span style="font-weight: 400">(I &lt;&gt; J) is </span><span style="font-weight: 400">True</span><span style="font-weight: 400">. </span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Assignment Operators</strong></h4>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Operator Name</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>=</b></td>
+<td><span style="font-weight: 400">Assignment</span></td>
+<td><span style="font-weight: 400">It assigns a value from right side operand to left side operand</span></td>
+<td><span style="font-weight: 400">I = 40</span><br />
+<span style="font-weight: 400">It assigns 40 to I</span></td>
+</tr>
+<tr>
+<td><b>+=</b></td>
+<td><span style="font-weight: 400">Add then assign</span></td>
+<td><span style="font-weight: 400">It performs addition and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I+=J </span><br />
+<span style="font-weight: 400">that means I = I + J</span></td>
+</tr>
+<tr>
+<td><b>-=</b></td>
+<td><span style="font-weight: 400">Subtract then assign</span></td>
+<td><span style="font-weight: 400">It performs subtraction and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I-=J </span><br />
+<span style="font-weight: 400">that means I = I – J</span></td>
+</tr>
+<tr>
+<td><b>*=</b></td>
+<td><span style="font-weight: 400">Multiply the assign</span></td>
+<td><span style="font-weight: 400">It performs multiplication and then the results are assigned to the left-hand operand.</span></td>
+<td><span style="font-weight: 400">I*=J </span><br />
+<span style="font-weight: 400">that means I = I * J</span></td>
+</tr>
+<tr>
+<td><b>/=</b></td>
+<td><span style="font-weight: 400">Divide then assign</span></td>
+<td><span style="font-weight: 400">It performs division and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I/=J </span><br />
+<span style="font-weight: 400">that means I = I / J</span></td>
+</tr>
+<tr>
+<td><b>%=</b></td>
+<td><span style="font-weight: 400">Modulus then assign</span></td>
+<td><span style="font-weight: 400">It performs modulus and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I%=J </span><br />
+<span style="font-weight: 400">that means I = I % J</span></td>
+</tr>
+<tr>
+<td><b>**=</b></td>
+<td><span style="font-weight: 400">Exponent then assign</span></td>
+<td><span style="font-weight: 400">It performs exponent and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I**=J </span><br />
+<span style="font-weight: 400">that means I = I ** J</span></td>
+</tr>
+<tr>
+<td><b>//=</b></td>
+<td><span style="font-weight: 400">The floor division then assign</span></td>
+<td><span style="font-weight: 400">It performs floor division and then results is assigned to the left-hand operand</span></td>
+<td><span style="font-weight: 400">I//=J </span><br />
+<span style="font-weight: 400">that means I = I // J</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Logical Operators</strong></h4>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Operator Name</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>and</b></td>
+<td><span style="font-weight: 400">Logical AND</span></td>
+<td><span style="font-weight: 400">When Both side condition is true the result is true otherwise false</span></td>
+<td><span style="font-weight: 400">2&lt;1 and 2&lt;3</span><br />
+<span style="font-weight: 400">False</span></td>
+</tr>
+<tr>
+<td><b>or</b></td>
+<td><span style="font-weight: 400">Logical OR</span></td>
+<td><span style="font-weight: 400">When at least one condition is true then the result is true otherwise false</span></td>
+<td><span style="font-weight: 400">2&lt;1 or 2&lt;3</span><br />
+<span style="font-weight: 400">True</span></td>
+</tr>
+<tr>
+<td><b>not</b></td>
+<td><span style="font-weight: 400">Logical NOT</span></td>
+<td><span style="font-weight: 400">Reverse the condition</span></td>
+<td><span style="font-weight: 400">Not (5&gt;4)</span><br />
+<span style="font-weight: 400">False</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Membership Operators</strong></h4>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>in</b></td>
+<td><span style="font-weight: 400">It returns true if it finds a variable in the sequence otherwise returns false</span></td>
+<td><span style="font-weight: 400">List = [1,2,3,4,5,6,7,8]</span><br />
+<span style="font-weight: 400">i=1</span><br />
+<span style="font-weight: 400">if i in List:</span><br />
+<span style="font-weight: 400">    print(&#8216;i is available in list&#8217;)</span><br />
+<span style="font-weight: 400">else:</span><br />
+<span style="font-weight: 400">    print(&#8216;i is not available in list&#8217;)</span><br />
+<span style="font-weight: 400">Output</span><span style="font-weight: 400"> – i is available in list</span></td>
+</tr>
+<tr>
+<td><b>not in</b></td>
+<td><span style="font-weight: 400">It returns true if it does not find a variable in the sequence otherwise returns false</span></td>
+<td><span style="font-weight: 400">List = [1,2,3,4,5,6,7,8]</span><br />
+<span style="font-weight: 400">j=10</span><br />
+<span style="font-weight: 400">if j not in List:</span><br />
+<span style="font-weight: 400">print (‘j is not available in list’)</span><br />
+<span style="font-weight: 400">else: </span><br />
+<span style="font-weight: 400">print (‘j is available in list’)</span><br />
+<span style="font-weight: 400">Output</span><span style="font-weight: 400"> – j is not available in list</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Bitwise Operators</strong></h4>
+<p>It performs bit by bit operation.<br />
+Suppose there are two variables,<br />
+I = 10 and<br />
+J = 20<br />
+and their binary values are:<br />
+I = 10 = 0000 1010<br />
+J = 20 = 0001 0100<br />
+now let us see how bitwise operators perform.</p>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Operator Name</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>&amp;</b></td>
+<td><span style="font-weight: 400">Binary AND</span></td>
+<td><span style="font-weight: 400">If both bits are 1 then 1 otherwise 0</span></td>
+<td><span style="font-weight: 400">I &amp; J</span><br />
+<span style="font-weight: 400">0000 0000</span></td>
+</tr>
+<tr>
+<td><b>|</b></td>
+<td><span style="font-weight: 400">Binary OR</span></td>
+<td><span style="font-weight: 400">If one of the bits is 1 then 1 otherwise 0</span></td>
+<td><span style="font-weight: 400">I | J</span><br />
+<span style="font-weight: 400">0001 1110</span></td>
+</tr>
+<tr>
+<td><b>^</b></td>
+<td><span style="font-weight: 400">Binary XOR</span></td>
+<td><span style="font-weight: 400">If both bits are same, then 0 otherwise 1</span></td>
+<td><span style="font-weight: 400">I ^ J</span><br />
+<span style="font-weight: 400">0001 1110</span></td>
+</tr>
+<tr>
+<td><b>~</b></td>
+<td><span style="font-weight: 400">Binary Complement</span></td>
+<td><span style="font-weight: 400">If bit is 1 the make it 0 and if bit is 0 the make it 1</span></td>
+<td><span style="font-weight: 400">~I</span><br />
+<span style="font-weight: 400">1111 0101</span></td>
+</tr>
+<tr>
+<td><b>&lt;&lt; </b></td>
+<td><span style="font-weight: 400">Binary Left Shift</span></td>
+<td><span style="font-weight: 400">The left operand is moved left by the number of bits specified by the right operand.</span></td>
+<td><span style="font-weight: 400">I &lt;&lt; 2 </span><br />
+<span style="font-weight: 400">240</span><span style="font-weight: 400"> i.e</span><span style="font-weight: 400">. 1111 0000</span></td>
+</tr>
+<tr>
+<td><b>&gt;&gt; </b></td>
+<td><span style="font-weight: 400">Binary Right Shift</span></td>
+<td><span style="font-weight: 400">The left operand is moved right by the number of bits specified by the right operand.</span></td>
+<td><span style="font-weight: 400">I &gt;&gt; 2 </span><br />
+<span style="font-weight: 400">15</span><span style="font-weight: 400"> i.e. </span><span style="font-weight: 400">1111</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4><strong>Identity Operators</strong></h4>
+<p class="normal"><span lang="EN">These operators are used to compare the memory address of two objects.</span></p>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><b>Operator</b></td>
+<td><b>Description</b></td>
+<td><b>Example</b></td>
+</tr>
+<tr>
+<td><b>is</b></td>
+<td><span style="font-weight: 400">It returns true if both operand‘s identity is same otherwise false</span></td>
+<td><span style="font-weight: 400">I = 20</span><br />
+<span style="font-weight: 400">J = 20</span><br />
+<span style="font-weight: 400">if(I is J):</span><br />
+<span style="font-weight: 400">    print (&#8216;I and J have the same identity)</span><br />
+<span style="font-weight: 400">else:</span><br />
+<span style="font-weight: 400">    print (&#8216;I and J have not same identity&#8217;)</span><br />
+<span style="font-weight: 400">Output </span><span style="font-weight: 400">– I and J have same identity</span></td>
+</tr>
+<tr>
+<td><b>is not</b></td>
+<td><span style="font-weight: 400">It returns true if both operand‘s identity is not the same otherwise false</span></td>
+<td><span style="font-weight: 400">I = 20</span><br />
+<span style="font-weight: 400">J = 230</span><br />
+<span style="font-weight: 400">if(I is not J):</span><br />
+<span style="font-weight: 400">    print (&#8216;I and J have not same identity&#8217;)</span><br />
+<span style="font-weight: 400">else:</span><br />
+<span style="font-weight: 400">    print (&#8216;I and J have the same identity)</span><br />
+<span style="font-weight: 400">Output</span><span style="font-weight: 400"> – I and J have not same identity</span></td>
+</tr>
+</tbody>
+</table>
+</div>                                  
+</body>
+</html>
